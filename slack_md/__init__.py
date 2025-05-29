@@ -21,8 +21,7 @@ from markdown.inlinepatterns import (
 from .emojis import EMOJIS
 
 # <http://www.123.com|Hello>
-AUTOLINK_RE = r"<((?:[Ff]|[Hh][Tt])[Tt][Pp][Ss]?://[^<>|]*)(\|(?P<name>[^>]*))?>"
-
+AUTOLINK_RE = r'<((?:[Ff]|[Hh][Tt])[Tt][Pp][Ss]?://[^<>|]*|mailto:[^<>|]*)(\|(?P<name>[^>]*))?>'
 # two spaces at end of line
 LINE_BREAK_RE = r"\n"
 

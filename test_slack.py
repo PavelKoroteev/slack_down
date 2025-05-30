@@ -110,3 +110,10 @@ def test_prio_links():
     md = "Hey _beep <https://example.org|hmm_yeah>"
     out = '<p>Hey _beep <a href="https://example.org">hmm_yeah</a></p>'
     assert slack_md.convert(md) == out
+
+
+def test_mailto_slack_links():
+    """should prioritize links"""
+    md = "Hey _beep <mailto:https://example.org|https://example.org>."
+    out = '<p>Hey _beep <a href="https://example.org">https://example.org</a>.</p>'
+    assert slack_md.convert(md) == out
